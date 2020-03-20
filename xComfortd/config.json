@@ -12,8 +12,13 @@
         "armv7",
         "i386"
     ],
+    "privileged": [
+        "SYS_MODULE",
+        "SYS_RAWIO"
+    ],
     "devices": [
-        "/dev/bus/usb:/dev/bus/usb:rwm"
+        "/dev/bus/usb:/dev/bus/usb:rwm",
+        "/dev/mem:/dev/mem:rw"
     ],
     "map": [
         "config"
