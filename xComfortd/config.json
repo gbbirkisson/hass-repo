@@ -1,0 +1,17 @@
+{
+    "name": "XComfort",
+    "version": "0.1",
+    "slug": "xcomfort",
+    "description": "Eaton XComfort to MQTT gateway",
+    "startup": "application",
+    "boot": "auto",
+    "devices": [
+        "/dev/bus/usb:/dev/bus/usb:rwm"
+    ],
+    "options": {
+        "mqtt_host": "hassio.local",
+        "mqtt_user": "username",
+        "mqtt_pass": "password"
+    },
+    "schema": {}
+}
