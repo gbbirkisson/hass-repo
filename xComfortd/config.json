@@ -5,6 +5,13 @@
     "description": "Eaton XComfort to MQTT gateway",
     "startup": "application",
     "boot": "auto",
+    "arch": [
+        "aarch64",
+        "amd64",
+        "armhf",
+        "armv7",
+        "i386"
+    ],
     "devices": [
         "/dev/bus/usb:/dev/bus/usb:rwm"
     ],
@@ -13,5 +20,6 @@
         "mqtt_user": "username",
         "mqtt_pass": "password"
     },
-    "schema": {}
+    "schema": {},
+    "image": "gummisaddons/comfortxd-{arch}"
 }
