@@ -15,11 +15,18 @@
     "devices": [
         "/dev/bus/usb:/dev/bus/usb:rwm"
     ],
+    "map": [
+        "config"
+    ],
     "options": {
         "mqtt_host": "hassio.local",
         "mqtt_user": "username",
         "mqtt_pass": "password"
     },
-    "schema": {},
+    "schema": {
+        "mqtt_host": "str",
+        "mqtt_user": "str",
+        "mqtt_pass": "str"
+    },
     "image": "gummisaddons/comfortxd-{arch}"
 }
