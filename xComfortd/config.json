@@ -28,5 +28,4 @@
         "mqtt_user": "str",
         "mqtt_pass": "str"
     },
-    "image": "gummisaddons/comfortxd-{arch}"
 }
