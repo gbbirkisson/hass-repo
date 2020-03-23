@@ -1,5 +1,5 @@
 {
-    "image": "gbbirkisson/xcomfortd:latest",
+    "image": "gbbirkisson/xcomfortd",
     "name": "XComfortd",
     "version": "0.1",
     "slug": "xcomfortd",
