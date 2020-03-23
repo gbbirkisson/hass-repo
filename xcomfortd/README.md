@@ -2,7 +2,7 @@
 
 ## About
 
-This plugin allows you to communicate with the Eaton xComfort CKOZ-00/14 Communication stick through MQTT. It is based on this awesome repository: <https://github.com/karloygard/xcomfortd>. View the [README](https://github.com/karloygard/xcomfortd/blob/master/README.md) from that repository for more info.
+This plugin allows you to control the Eaton xComfort CKOZ-00/14 Communication stick through MQTT. It is based on `karloygard` [xcomfortd](https://github.com/karloygard/xcomfortd). View the [README](https://github.com/karloygard/xcomfortd/blob/master/README.md) from that repository for more info.
 
 ## Setup lights
 
