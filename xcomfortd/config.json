@@ -1,7 +1,8 @@
 {
-    "name": "XComfort",
+    "image": "gbbirkisson/xcomfortd:latest",
+    "name": "XComfortd",
     "version": "0.1",
-    "slug": "xcomfort",
+    "slug": "xcomfortd",
     "description": "Eaton XComfort to MQTT gateway",
     "startup": "application",
     "boot": "auto",
@@ -13,24 +14,26 @@
         "i386"
     ],
     "privileged": [
-        "SYS_MODULE",
         "SYS_RAWIO"
     ],
     "devices": [
-        "/dev/bus/usb:/dev/bus/usb:rwm",
-        "/dev/mem:/dev/mem:rw"
+        "/dev/bus/usb:/dev/bus/usb:rwm"
     ],
     "map": [
         "config"
     ],
     "options": {
-        "mqtt_host": "hassio.local",
+        "mqtt_host": "localhost",
+        "mqtt_port": "1883",
         "mqtt_user": "username",
-        "mqtt_pass": "password"
+        "mqtt_pass": "password",
+        "verbose": false
     },
     "schema": {
         "mqtt_host": "str",
+        "mqtt_port": "int",
         "mqtt_user": "str",
-        "mqtt_pass": "str"
+        "mqtt_pass": "str",
+        "verbose": "bool"
     }
 }

@@ -1,1 +1,3 @@
-# Gummi's Hass.io Addons
+# Gummi's Home Assistant Addons
+
+My custom Home Assistant Addons
