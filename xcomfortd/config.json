@@ -1,7 +1,7 @@
 {
     "image": "gbbirkisson/xcomfortd",
     "name": "XComfortd",
-    "version": "latest",
+    "version": "0.1",
     "slug": "xcomfortd",
     "description": "Eaton XComfort to MQTT gateway",
     "startup": "application",
