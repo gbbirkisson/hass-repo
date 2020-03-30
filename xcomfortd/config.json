@@ -25,13 +25,13 @@
         "mqtt:need"
     ],
     "options": {
-        "mqtt-client-id": "xcomfortd",
-        "datapoints-file": "xcomfort-datapoints.txt",
-        "device-number": 0
+        "mqtt_client_id": "xcomfortd",
+        "datapoints_file": "xcomfort-datapoints.txt",
+        "device_number": 0
     },
     "schema": {
-        "mqtt-client-id": "str",
-        "datapoints-file": "str",
-        "device-number": "int"
+        "mqtt_client_id": "str",
+        "datapoints_file": "str",
+        "device_number": "int"
     }
 }
