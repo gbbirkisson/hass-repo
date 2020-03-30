@@ -1,20 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bashio
 
 set -e
 
-err () { echo "$@" 1>&2; exit 1; }
-
-check_env_var () {
-    if [ $2 = "" ]; then
-        err "Environmental variable $1 not set"
-    fi
-}
-
 CONFIG_PATH=/config
-PLUGIN_CONFIG_PATH=/data/options.json
 
-# Setup MQTT
-MQTT_CLIENT_ID="$(jq --raw-output '.mqtt_client_id' $PLUGIN_CONFIG_PATH)"
+MQTT_CLIENT_ID="$(bashio::config 'mqtt_client_id')"
 MQTT_HOST=$(bashio::services mqtt "host")
 MQTT_PORT=$(bashio::services mqtt "port")
 MQTT_USER=$(bashio::services mqtt "username")
@@ -28,11 +18,11 @@ check_env_var MQTT_PASSWORD ${MQTT_PASSWORD}
 set -- xcomfortd --client-id ${MQTT_CLIENT_ID} --server "${MQTT_USER}:${MQTT_PASSWORD}@${MQTT_HOST}:${MQTT_PORT}"
 
 # Setup other parameters
-DATAPOINTS_FILE="$(jq --raw-output '.datapoints_file' $PLUGIN_CONFIG_PATH)"
-DEVICE_NUMBER="$(jq --raw-output '.device_number' $PLUGIN_CONFIG_PATH)"
+DATAPOINTS_FILE="$(bashio::config 'datapoints_file')"
+DEVICE_NUMBER="$(bashio::config 'device_number')"
 
 set -- "$@" --device-number ${DEVICE_NUMBER} --file "${CONFIG_PATH}/${DATAPOINTS_FILE}"
 
-echo "Starting xcomfortd ..."
+bashio::log.info "Starting xcomfortd ..."
 
 exec "$@"
