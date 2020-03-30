@@ -19,6 +19,6 @@ set -- xcomfortd usb \
     --file "${CONFIG_PATH}/${DATAPOINTS_FILE}"
 
 bashio::log.info "Starting $(xcomfortd --version)"
-bashio::log.info "$(echo $@ | sed s/${MQTT_USER}:${MQTT_PASSWORD}/*****/g)"
+bashio::log.debug "$(echo $@ | sed s/${MQTT_USER}:${MQTT_PASSWORD}/*****/g)"
 
 exec "$@"
