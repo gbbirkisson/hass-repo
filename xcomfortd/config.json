@@ -1,7 +1,6 @@
 {
-    "image": "gbbirkisson/xcomfortd",
-    "name": "XComfortd",
-    "version": "0.1",
+    "name": "xComfortd",
+    "version": "latest",
     "slug": "xcomfortd",
     "description": "Eaton XComfort to MQTT gateway",
     "startup": "application",
@@ -22,18 +21,17 @@
     "map": [
         "config"
     ],
+    "services": [
+        "mqtt:need"
+    ],
     "options": {
-        "mqtt_host": "localhost",
-        "mqtt_port": "1883",
-        "mqtt_user": "username",
-        "mqtt_pass": "password",
-        "verbose": false
+        "mqtt-client-id": "xcomfortd",
+        "datapoints-file": "xcomfort-datapoints.txt",
+        "device-number": 0
     },
     "schema": {
-        "mqtt_host": "str",
-        "mqtt_port": "int",
-        "mqtt_user": "str",
-        "mqtt_pass": "str",
-        "verbose": "bool"
+        "mqtt-client-id": "str",
+        "datapoints-file": "str",
+        "device-number": "int"
     }
 }
