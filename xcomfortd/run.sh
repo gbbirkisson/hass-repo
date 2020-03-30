@@ -12,13 +12,15 @@ MQTT_PASSWORD=$(bashio::services mqtt "password")
 DATAPOINTS_FILE="$(bashio::config 'datapoints_file')"
 DEVICE_NUMBER="$(bashio::config 'device_number')"
 
-set -- xcomfortd \
+set -- xcomfortd usb \
     --client-id ${MQTT_CLIENT_ID} \
     --server "${MQTT_USER}:${MQTT_PASSWORD}@${MQTT_HOST}:${MQTT_PORT}" \
     --device-number ${DEVICE_NUMBER} \
     --file "${CONFIG_PATH}/${DATAPOINTS_FILE}"
 
-bashio::log.info "Starting xcomfortd ..."
+ls ${CONFIG_PATH}
+
+bashio::log.info "Starting $(xcomfortd --version)"
 bashio::log.info "$(echo $@ | sed s/${MQTT_USER}:${MQTT_PASSWORD}/*****/g)"
 
 exec "$@"
