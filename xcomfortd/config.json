@@ -26,12 +26,18 @@
     ],
     "options": {
         "mqtt_client_id": "xcomfortd",
-        "datapoints_file": "xcomfort-datapoints.txt",
-        "device_number": 0
+        "datapoints_file": "Datenpunkte.txt",
+        "device_number": 0,
+        "ha_discovery": true,
+        "ha_discovery_prefix": "homeassistant",
+        "verbose": false
     },
     "schema": {
         "mqtt_client_id": "str",
         "datapoints_file": "str",
-        "device_number": "int"
+        "device_number": "int",
+        "ha_discovery": "bool",
+        "ha_discovery_prefix": "str",
+        "verbose": "bool"
     }
 }
