@@ -1,0 +1,38 @@
+{
+    "name": "Carwings Homecontrol",
+    "version": "0.1",
+    "slug": "carwings-homecontrol",
+    "description": "HomeKit support for the Nissan Leaf",
+    "startup": "application",
+    "boot": "auto",
+    "arch": [
+        "aarch64",
+        "amd64",
+        "armhf",
+        "armv7",
+        "i386"
+    ],
+    "host_network": true,
+    "options": {
+        "username": "foo@example.com",
+        "password": "carwingsPassw0rd",
+        "region": "NNA",
+        "accessory_name": "Leaf",
+        "homekit_pin": "00102003",
+        "climate_update_interval": "15m",
+        "battery_update_interval": "15m",
+        "storage_path": "~/.homecontrol",
+        "debug": false
+    },
+    "schema": {
+        "username": "str",
+        "password": "str",
+        "region": "str",
+        "accessory_name": "str",
+        "homekit_pin": "str",
+        "climate_update_interval": "str",
+        "battery_update_interval": "str",
+        "storage_path": "str",
+        "debug": "bool"
+    }
+}
