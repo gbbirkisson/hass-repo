@@ -9,8 +9,8 @@ cat <<EOF >/config.json
     "region": "$(bashio::config 'region')",
     "accessory_name": "$(bashio::config 'accessory_name')",
     "homekit_pin": "$(bashio::config 'homekit_pin')",
-    "climate_update_interval": "$(bashio::config 'climate_update_interval')",
-    "battery_update_interval": "$(bashio::config 'battery_update_interval')",
+    "climate_update_interval": $(bashio::config 'climate_update_interval'),
+    "battery_update_interval": $(bashio::config 'battery_update_interval'),
     "storage_path": "$(bashio::config 'storage_path')",
     "debug": $(bashio::config 'debug')
 }
