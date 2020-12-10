@@ -16,5 +16,7 @@ cat <<EOF >/config.json
 }
 EOF
 
+cat /config.json
+
 bashio::log.info "Starting carwings-homecontrol"
 exec carwings-homecontrol -config /config.json
