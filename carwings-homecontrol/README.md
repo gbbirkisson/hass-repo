@@ -26,8 +26,8 @@ password: carwingsPassw0rd
 region: NNA
 accessory_name: Leaf
 homekit_pin: 00102003
-climate_update_interval: 15m
-battery_update_interval: 15m
+climate_update_interval: 15
+battery_update_interval: 15
 storage_path: ~/.homecontrol
 debug: false
 ```

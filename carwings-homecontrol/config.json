@@ -19,8 +19,8 @@
         "region": "NNA",
         "accessory_name": "Leaf",
         "homekit_pin": "00102003",
-        "climate_update_interval": "15m",
-        "battery_update_interval": "15m",
+        "climate_update_interval": 15,
+        "battery_update_interval": 15,
         "storage_path": "~/.homecontrol",
         "debug": false
     },
@@ -30,8 +30,8 @@
         "region": "str",
         "accessory_name": "str",
         "homekit_pin": "str",
-        "climate_update_interval": "str",
-        "battery_update_interval": "str",
+        "climate_update_interval": "int",
+        "battery_update_interval": "int",
         "storage_path": "str",
         "debug": "bool"
     }
