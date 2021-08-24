@@ -1,4 +1,5 @@
-# Gummi's Home Assistant Addons
+<img align="right" width="128" height="128" src="logo.png">
+<h1>Gummi's Home Assistant Addons</h1>
 
 My custom Home Assistant Addons
 
