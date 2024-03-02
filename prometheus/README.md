@@ -35,5 +35,4 @@ scrape_configs:
 ## Grafana
 
 Grafana can use prometheus as a datasource, to configure this go to grafana and add a
-datasource. The hostname to connect to is depending on the release you installed. For stable
-this is `http://a0d7b954-prometheus:9090`
+datasource. The hostname to connect to is `http://4c7fdbfc-prometheus:9090`.
