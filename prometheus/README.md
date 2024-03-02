@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Prometheus
+# Gummi's Home Assistant Addons: Prometheus
 
 ....
 

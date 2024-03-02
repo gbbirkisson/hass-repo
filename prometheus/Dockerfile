@@ -16,18 +16,6 @@ COPY rootfs /
 RUN \
     ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
-    \
-    && apk --no-cache add \
-        python3=3.10.5-r0 \
-        py3-idna=3.3-r2 \
-        py3-certifi=2021.10.8-r0 \
-        py3-chardet=4.0.0-r3 \
-        py3-yaml=6.0-r0 \
-        py3-urllib3=1.26.9-r0 \
-        py3-requests=2.27.1-r0 \
-    && apk --no-cache add --virtual .builddeps \
-        py-pip=22.1.1-r0 \
-    \
     && curl -J -L -o /tmp/prometheus.tar.gz \
         "https://github.com/prometheus/prometheus/releases/download/v${PROMETHEUS_VERSION}/prometheus-${PROMETHEUS_VERSION}.linux-${ARCH}.tar.gz" \
     && adduser -s /bin/false -D -H prometheus \
@@ -40,15 +28,7 @@ RUN \
     && cp -R prometheus-${PROMETHEUS_VERSION}.linux-${ARCH}/consoles/ /etc/prometheus/ \
     && rm -r prometheus-${PROMETHEUS_VERSION}.linux-${ARCH} \
     && chown -R prometheus:prometheus /etc/prometheus \
-    && pip3 install \
-        --no-cache-dir \
-        --prefer-binary \
-        --find-links "https://wheels.home-assistant.io/alpine-3.15/${BUILD_ARCH}/" \
-        -r /opt/prometheus-configgen/requirements.txt \
-    \
-    && apk --no-cache del .builddeps \
-    && rm -f -r \
-        /tmp/*
+    && rm -f -r /tmp/*
 
 # Build arguments
 ARG BUILD_DATE
@@ -62,15 +42,15 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Robbert Müller <homeassistant@grols.ch>" \
+    maintainer="Guðmundur Björn Birkisson <gbbirkisson@gmail.com>" \
     org.opencontainers.image.title="Prometheus" \
     org.opencontainers.image.description="Cloud native metrics" \
-    org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
-    org.opencontainers.image.authors="Robbert Müller <homeassistant@grols.ch>" \
+    org.opencontainers.image.vendor="Gummi's Home Assistant Addons" \
+    org.opencontainers.image.authors="Guðmundur Björn Birkisson <gbbirkisson@gmail.com>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://addons.community" \
-    org.opencontainers.image.source="https://github.com/hassio-addons/addon-prometheus" \
-    org.opencontainers.image.documentation="https://github.com/hassio-addons/addon-prometheus/blob/master/README.md" \
+    org.opencontainers.image.url="https://github.com/gbbirkisson/hass-repo/" \
+    org.opencontainers.image.source="https://github.com/gbbirkisson/hass-repo/" \
+    org.opencontainers.image.documentation="https://github.com/gbbirkisson/hass-repo/blob/master/prometheus/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
