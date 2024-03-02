@@ -1,0 +1,28 @@
+---
+name: Prometheus
+version: dev
+slug: prometheus
+description: Cloud native metrics
+url: https://github.com/gbbirkisson/hass-repo/
+startup: services
+ingress: true
+ingress_port: 9090
+ingress_entry: graph
+init: false
+panel_icon: mdi:chart-timeline
+panel_title: Prometheus
+arch:
+  - aarch64
+  - amd64
+  - armv7
+homeassistant_api: true
+map:
+  - "config:ro"
+ports:
+  9090/tcp: null
+ports_description:
+  9090/tcp: Not required for Ingress
+options:
+  retention: "60d"
+schema:
+  retention: str
