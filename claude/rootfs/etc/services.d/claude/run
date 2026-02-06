@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bashio
+
+export HOME=/data
+FONT_SIZE=$(bashio::config 'font_size')
+FONT_SIZE=${FONT_SIZE:-30}
+LOG_LEVEL=$(bashio::config 'ttyd_loglevel')
+LOG_LEVEL=${LOG_LEVEL:-8}
+
+bashio::log.info "Creating new tmux session..."
+tmux new -s claude -d claude
+
+bashio::log.info "Starting Claude via ttyd (HOME=$HOME, FontSize=$FONT_SIZE, LogLevel=$LOG_LEVEL)..."
+exec ttyd -d "${LOG_LEVEL}" -t fontSize="${FONT_SIZE}" -W -p 7681 tmux attach -d -t claude

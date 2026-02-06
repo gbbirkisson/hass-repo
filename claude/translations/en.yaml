@@ -1,0 +1,4 @@
+configuration:
+  startup_script:
+    name: Startup Script
+    description: A script to run before the application starts.

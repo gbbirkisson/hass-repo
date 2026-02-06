@@ -1,0 +1,26 @@
+name: "Claude"
+version: "0.1.0"
+slug: "claude"
+description: "Run Anthropic's Claude in a browser terminal via Home Assistant."
+url: "https://github.com/anthropics/claude-code"
+startup: application
+arch:
+  - aarch64
+  - amd64
+  - armv7
+  - s390x
+init: false
+map:
+  - config:rw
+  - addon_config:rw
+ingress: true
+ingress_port: 7681
+homeassistant_api: true
+panel_icon: "mdi:robot-happy-outline"
+options:
+  font_size: 30
+  ttyd_loglevel: 8
+schema:
+  font_size: int
+  ttyd_loglevel: int
+
