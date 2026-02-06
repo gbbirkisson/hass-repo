@@ -15,13 +15,8 @@ RUN apk add --no-cache \
     npm \
     git
 
-# Install uv
 COPY --from=ghcr.io/astral-sh/uv:0.10.0 /uv /uvx /usr/local/bin/
-
 COPY --from=tsl0922/ttyd:1.7.7-alpine /usr/bin/ttyd /usr/local/bin/ttyd
-
-# Setup path
-ENV PATH="/root/.local/bin:$PATH"
 
 # Install claude
 RUN curl -fsSL https://claude.ai/install.sh -o /tmp/install-claude.sh && \

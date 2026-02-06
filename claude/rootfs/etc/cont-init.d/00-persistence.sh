@@ -3,15 +3,12 @@ set -e
 
 bashio::log.info "Initializing /data as HOME..."
 
-# Ensure /data exists
-mkdir -p /data
+rm -rf /data/.local/share /data/.local/bin
+mkdir -p /data/.local/share /data/.local/bin
 
-# If Claude was installed to /root/.claude during build, move it to /data/.claude
-# so it is available in the persistent HOME.
-if [ -d "/root/.claude" ] && [ ! -d "/data/.claude" ]; then
-    bashio::log.info "Copying Claude installation to persistent home (/data/.claude)"
-    cp -rp /root/.claude /data/
-fi
+rm /root/.local/bin/claude
+mv -f /root/.local/share/claude /data/.local/share/claude
+ln $(realpath $(ls /data/.local/share/claude/versions/*)) /data/.local/bin/claude
 
 # Create /config/claude directory for user projects
 PROJECT_DIR="/config/claude"
@@ -19,4 +16,3 @@ if [ ! -d "$PROJECT_DIR" ]; then
     bashio::log.info "Creating project directory at $PROJECT_DIR"
     mkdir -p "$PROJECT_DIR"
 fi
-
