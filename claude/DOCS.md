@@ -31,7 +31,6 @@ Any files ending in `.sh` in this directory will be **sourced** (executed in the
 ```bash
 #!/bin/bash
 export MY_CUSTOM_VAR="hello"
-apk add --no-cache git
 ```
 
 ## Storage & Persistence

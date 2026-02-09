@@ -1,13 +1,11 @@
 build_from:
-  aarch64: "ghcr.io/home-assistant/aarch64-base:3.23"
-  amd64: "ghcr.io/home-assistant/amd64-base:3.23"
-  armv7: "ghcr.io/home-assistant/armv7-base:3.23"
+  aarch64: "ghcr.io/home-assistant/aarch64-base-debian:trixie"
+  amd64: "ghcr.io/home-assistant/amd64-base-debian:trixie"
+  armv7: "ghcr.io/home-assistant/armv7-base-debian:trixie"
 labels:
   org.opencontainers.image.title: "Home Assistant Add-on: Claude"
   org.opencontainers.image.description: "Run Anthropic's Claude in a browser terminal via Home Assistant."
-  org.opencontainers.image.source: "https://github.com/gbb/gbb-pa"
+  org.opencontainers.image.source: "https://github.com/gbbirkisson/hass-repo"
   org.opencontainers.image.licenses: "MIT"
 args:
   CLAUDE_VERSION: "2.1.29"
-  TTYD_VERSION: "1.7.7"
-  UV_VERSION: "0.10.0"

@@ -1,19 +1,15 @@
 # Default architecture for local testing
 ARCH := "amd64"
-BASE_IMAGE := "ghcr.io/home-assistant/" + ARCH + "-base:3.23"
+BASE_IMAGE := "ghcr.io/home-assistant/" + ARCH + "-base-debian:trixie"
 
 # Extract versions from build.yaml for local build
 CLAUDE_VERSION := `grep CLAUDE_VERSION build.yaml | awk '{print $2}' | tr -d '"'`
-TTYD_VERSION := `grep TTYD_VERSION build.yaml | awk '{print $2}' | tr -d '"'`
-UV_VERSION := `grep UV_VERSION build.yaml | awk '{print $2}' | tr -d '"'`
 
 # Build the Docker image locally
 build:
     docker build \
         --build-arg BUILD_FROM={{BASE_IMAGE}} \
         --build-arg CLAUDE_VERSION={{CLAUDE_VERSION}} \
-        --build-arg TTYD_VERSION={{TTYD_VERSION}} \
-        --build-arg UV_VERSION={{UV_VERSION}} \
         -t local-claude-addon .
 
 # Run the container with persistence and port mapping
