@@ -1,6 +1,6 @@
 # Default architecture for local testing
 ARCH := "amd64"
-BASE_IMAGE := "ghcr.io/home-assistant/" + ARCH + "-base-debian:trixie"
+BASE_IMAGE := "ghcr.io/home-assistant/" + ARCH + "-base:3.23"
 
 # Extract versions from build.yaml for local build
 CLAUDE_VERSION := `grep CLAUDE_VERSION build.yaml | awk '{print $2}' | tr -d '"'`

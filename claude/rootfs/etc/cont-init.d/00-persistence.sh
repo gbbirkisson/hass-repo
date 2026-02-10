@@ -4,7 +4,7 @@ set -e
 bashio::log.info "Initializing /data as HOME..."
 
 rm -rf /data/.local/share/claude /data/.local/bin/claude
-mkdir -p /data/.local/share /data/.local/bin
+mkdir -p /data/.local/share /data/.local/bin /data/tmp
 
 rm /root/.local/bin/claude
 mv -f /root/.local/share/claude /data/.local/share
